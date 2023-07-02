@@ -94,7 +94,7 @@ public_users.get('/author/:author', async function (req, res) {
 public_users.get('/title/:title', async function (req, res) {
   let booksByTitle = [];
   let allBooks = await books;
-  for (let bookISBN in await allBooks) {
+  for (let bookISBN in allBooks) {
     if (allBooks[bookISBN].title === req.params.title) {
       booksByTitle.push({ "isbn": bookISBN, "author": allBooks[bookISBN].author, "reviews": allBooks[bookISBN].reviews });
     }
